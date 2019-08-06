@@ -1,5 +1,8 @@
 const welcomeMessage = ' WELCOME TO KVSDB  \n Please enter a command: '
 
+const Pbf = require('pbf');
+const pbf = new Pbf(fs.readFileSync('data.pbf'));
+
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
@@ -10,7 +13,14 @@ const rl = readline.createInterface({
 console.log(welcomeMessage)
 
 rl.on('line', (line) => {
-    console.log(line);
+    const input = line.split(' ');
+    if (input[0] === 'get') {
+      console.log('getting')
+    }
+    if (input[0] === 'set') {
+      console.log('setting')
+      console.log(input[1])
+    }
 })
 
 rl.on('SIGINT', () => {
