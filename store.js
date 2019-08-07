@@ -1,8 +1,5 @@
 const welcomeMessage = ' WELCOME TO KVSDB  \n Please enter a command: '
 
-const Pbf = require('pbf');
-const pbf = new Pbf(fs.readFileSync('data.pbf'));
-
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
