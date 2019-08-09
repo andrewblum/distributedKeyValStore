@@ -1,5 +1,7 @@
 const welcomeMessage = ' WELCOME TO KVSDB  \n Please enter a command: '
 
+const protobuf = require('protobufjs');
+
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
