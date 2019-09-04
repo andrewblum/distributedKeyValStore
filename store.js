@@ -1,6 +1,7 @@
 const welcomeMessage = ' WELCOME TO KVSDB  \n Please enter a command: '
 
 const protobuf = require('protobufjs');
+const fs = require('fs');
 
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -27,4 +28,13 @@ rl.on('SIGINT', () => {
     if (answer.match(/^y(es)?$/i)) rl.pause();
   });
 });
+
+
+fs.readFile('data.pbf', (err, data) => {
+  console.log(data);
+})
+
+
+
+
 
